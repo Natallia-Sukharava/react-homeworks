@@ -1,5 +1,11 @@
 {
   "name": "delivery",
+  "author": "Natallia",
+  "description": "React project for homeworks",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MblLLLA-react/react-homeworks.git"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
