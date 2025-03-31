@@ -1,10 +1,10 @@
 {
   "name": "delivery",
-  "author": "Natallia",
+  "author": "Natallia Sukharava",
   "description": "React project for homeworks",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MblLLLA-react/react-homeworks.git"
+    "url": "https://github.com/Natallia-Sukharava/react-homeworks.git"
   },
   "private": true,
   "version": "0.0.0",
