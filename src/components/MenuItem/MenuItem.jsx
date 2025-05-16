@@ -7,11 +7,9 @@ function MenuItem({ item }) {
   const { addToCart } = useContext(CartContext);
 
   const handleAddToCart = () => {
-    for (let i = 0; i < qty; i++) {
-      addToCart(item.price || 0);
-    }
+    addToCart((item.price || 0) * qty, qty);
   };
-
+  
   if (!item) {
     return null;
   }

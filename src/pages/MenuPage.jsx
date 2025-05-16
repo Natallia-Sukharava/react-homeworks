@@ -1,31 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useFetch from "../hooks/useFetch";
 import MenuItem from "../components/MenuItem/MenuItem";
 import Tooltip from "../components/Tooltip";
 import "./MenuPage.css";
 
 function MenuPage() {
   const itemsPerClick = 6;
-
-  const [meals, setMeals] = useState([]);
   const [visibleCount, setVisibleCount] = useState(itemsPerClick);
-  const [selectedCategory, setSelectedCategory] = useState(null); 
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
-  useEffect(() => {
-    fetch("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals")
-      .then((response) => response.json())
-      .then((data) => setMeals(data))
-      .catch((error) => console.error("Error fetching meals:", error));
-  }, []);
+  const { data: meals, status } = useFetch("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals");
 
   const handleSeeMore = () => {
     setVisibleCount((prev) => prev + itemsPerClick);
   };
 
   const filteredMeals = selectedCategory
-    ? meals.filter((meal) => meal.category === selectedCategory)
+    ? meals?.filter((meal) => meal.category === selectedCategory)
     : meals;
 
-  if (meals.length === 0) {
+  if (status === null || !meals) {
     return <div>Loading...</div>;
   }
 
