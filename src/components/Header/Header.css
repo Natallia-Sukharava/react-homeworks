@@ -40,10 +40,14 @@
   font-weight: 400;
   line-height: 20px;
   color: #28224B;
+  text-decoration: none;
 }
   
 .nav-item.active {
   color: #35B8BE;
+  font-weight: 600;
+  border-bottom: 2px solid #35B8BE;
+  text-decoration: none !important;
 }
   
 .nav-item.login {

@@ -1,0 +1,107 @@
+.login-wrapper {
+  position: relative;
+  padding-top: 140px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5fbfc;
+  justify-content: center;
+  min-height: calc(100vh - 100px);
+  box-sizing: border-box;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.login-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: 1.65px;
+  color: #35b8be;
+  margin-bottom: 40px;
+}
+
+.login-box {
+  width: 695px;
+  height: 283px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  border: 1px solid rgba(53, 184, 190, 0.15);
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.login-form label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  color: #08090a;
+  letter-spacing: 0.6px;
+}
+
+.login-form input {
+  width: 430px;
+  height: 45px;
+  border-radius: 6px;
+  border: 1px solid #dddddd;
+  background-color: #fafafa;
+  padding: 0 14px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #000;
+  text-align: left;
+}
+
+.login-form input::placeholder {
+  color: #000000;
+}
+
+.login-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  padding-left: 145px;
+}
+
+.submit-btn {
+  width: 147px;
+  height: 52px;
+  border-radius: 6px;
+  background-color: #35b8be;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  width: 132px;
+  height: 52px;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color:#222222;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+}
+
+.login-error {
+  color: red;
+  margin-top: 15px;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+
