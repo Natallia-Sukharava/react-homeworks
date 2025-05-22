@@ -6,10 +6,10 @@ export function CartProvider({ children }) {
   const [cartCount, setCartCount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
-  const addToCart = (price = 0) => {
-    setCartCount((prev) => prev + 1);
-    setCartTotal((prev) => prev + price);
-  };
+  const addToCart = (totalPrice = 0, quantity = 1) => {
+    setCartCount((prev) => prev + quantity);
+    setCartTotal((prev) => prev + totalPrice);
+  };  
 
   return (
     <CartContext.Provider value={{ cartCount, cartTotal, addToCart }}>
