@@ -1,7 +1,8 @@
 import './Footer.css';
+import { FooterColumn } from "../../types";
 
 function Footer() {
-  const columns = [
+  const columns: FooterColumn[] = [
     {
       title: "Company",
       items: ["Home", "Order", "FAQ", "Contact"],

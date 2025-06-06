@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-function useFetch(url, options = {}) {
-  const [data, setData] = useState(null);
-  const [status, setStatus] = useState(null);
+function useFetch<T = unknown>(url: string, options: RequestInit = {}) {
+  const [data, setData] = useState<T | null>(null);
+  const [status, setStatus] = useState<number | "error" | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,6 @@ function useFetch(url, options = {}) {
           timestamp: new Date().toISOString(),
         };
         localStorage.setItem(`fetchLog_${Date.now()}`, JSON.stringify(log));
-
       } catch (error) {
         console.error("useFetch error:", error);
         setStatus("error");

@@ -1,10 +1,15 @@
 import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext";
+import { CartContextType } from "../../types";
 import "./Header.css";
 
 function Header() {
-  const { cartCount, cartTotal } = useContext(CartContext);
+  const context = useContext(CartContext);
+
+  if (!context) return null;
+
+  const { cartCount, cartTotal } = context as CartContextType;
 
   return (
     <header className="header">
