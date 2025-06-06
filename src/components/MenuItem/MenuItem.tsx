@@ -1,26 +1,26 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../CartContext";
+import { MenuItemProps } from "../../types";
 import "./MenuItem.css";
 
-function MenuItem({ item }) {
+function MenuItem({ item }: MenuItemProps) {
   const [qty, setQty] = useState(1);
-  const { addToCart } = useContext(CartContext);
+
+  const context = useContext(CartContext);
+  if (!context) return null;
+
+  const { addToCart } = context;
 
   const handleAddToCart = () => {
     addToCart((item.price || 0) * qty, qty);
   };
-  
-  if (!item) {
-    return null;
-  }
 
   const imageUrl = item.img || "/burger1.png";
   const title = item.meal || "No Title";
-  const description = item.instructions
-    ? (item.instructions.length > 100
-        ? `${item.instructions.slice(0, 100)}...`
-        : item.instructions)
-    : "No description available";
+  const description =
+    item.instructions.length > 100
+      ? `${item.instructions.slice(0, 100)}...`
+      : item.instructions;
 
   return (
     <div className="menu-item">
@@ -29,7 +29,7 @@ function MenuItem({ item }) {
         <div className="menu-item-header">
           <h3 className="menu-item-name">{title}</h3>
           <div className="menu-item-price">
-            ${item.price?.toFixed(2) || "0.00"} USD
+            ${item.price.toFixed(2)} USD
           </div>
         </div>
         <p className="menu-item-description">{description}</p>

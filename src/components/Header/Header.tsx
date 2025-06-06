@@ -1,9 +1,15 @@
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../CartContext";
+import { CartContextType } from "../../types";
 import "./Header.css";
 
 function Header() {
-  const { cartCount, cartTotal } = useContext(CartContext);
+  const context = useContext(CartContext);
+
+  if (!context) return null;
+
+  const { cartCount, cartTotal } = context as CartContextType;
 
   return (
     <header className="header">
@@ -13,10 +19,29 @@ function Header() {
         </div>
 
         <nav className="header-nav">
-          <span className="nav-item">Home</span>
-          <span className="nav-item active">Menu</span>
+          <NavLink
+            to="/"
+            className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/menu"
+            className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
+          >
+            Menu
+          </NavLink>
+
           <span className="nav-item">Company</span>
-          <span className="nav-item login">Login</span>
+
+          <NavLink
+            to="/login"
+            className={({ isActive }) => `nav-item login ${isActive ? "active" : ""}`}
+          >
+            Login
+          </NavLink>
+
           <div className="cart-wrapper">
             <div className="cart">
               <img src="/cart.svg" alt="basket" className="cart-icon" />
