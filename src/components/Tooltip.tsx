@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { TooltipProps } from "../types";
 
-function Tooltip({ children, tooltipText }) {
+function Tooltip({ children, tooltipText }: TooltipProps) {
   const [show, setShow] = useState(false);
 
   return (
@@ -22,7 +23,7 @@ function Tooltip({ children, tooltipText }) {
             left: "0",
             whiteSpace: "nowrap",
             marginTop: "5px",
-            fontSize: "12px"
+            fontSize: "12px",
           }}
         >
           {tooltipText}

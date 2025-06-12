@@ -3,13 +3,16 @@ import useFetch from "../hooks/useFetch";
 import MenuItem from "../components/MenuItem/MenuItem";
 import Tooltip from "../components/Tooltip";
 import "./MenuPage.css";
+import { Meal } from "../types";
 
 function MenuPage() {
   const itemsPerClick = 6;
-  const [visibleCount, setVisibleCount] = useState(itemsPerClick);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [visibleCount, setVisibleCount] = useState<number>(itemsPerClick);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const { data: meals, status } = useFetch("https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals");
+  const { data: meals, status } = useFetch<Meal[]>(
+    "https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals"
+  );
 
   const handleSeeMore = () => {
     setVisibleCount((prev) => prev + itemsPerClick);
@@ -38,33 +41,26 @@ function MenuPage() {
           </div>
 
           <div className="menu-buttons">
-            <button
-              className={`menu-btn ${selectedCategory === "Dessert" ? "active" : ""}`}
-              onClick={() => setSelectedCategory("Dessert")}
-            >
-              Dessert
-            </button>
-            <button
-              className={`menu-btn ${selectedCategory === "Dinner" ? "active" : ""}`}
-              onClick={() => setSelectedCategory("Dinner")}
-            >
-              Dinner
-            </button>
-            <button
-              className={`menu-btn ${selectedCategory === "Breakfast" ? "active" : ""}`}
-              onClick={() => setSelectedCategory("Breakfast")}
-            >
-              Breakfast
-            </button>
-          </div>
-
-          <div className="menu-items">
-            {filteredMeals.slice(0, visibleCount).map((item) => (
-              <MenuItem key={item.id} item={item} />
+            {["Dessert", "Dinner", "Breakfast"].map((category) => (
+              <button
+                key={category}
+                className={`menu-btn ${selectedCategory === category ? "active" : ""}`}
+                onClick={() => setSelectedCategory(category)}
+              >
+                {category}
+              </button>
             ))}
           </div>
 
-          {visibleCount < filteredMeals.length && (
+          <div className="menu-items">
+            {filteredMeals
+              ?.slice(0, visibleCount)
+              .map((item) => (
+                <MenuItem key={item.id} item={item} />
+              ))}
+          </div>
+
+          {filteredMeals && visibleCount < filteredMeals.length && (
             <div className="menu-see-more">
               <button className="menu-btn-see-more" onClick={handleSeeMore}>
                 See more
