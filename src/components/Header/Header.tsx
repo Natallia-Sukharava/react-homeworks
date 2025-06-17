@@ -1,15 +1,11 @@
 import { NavLink } from "react-router-dom";
-import { useContext } from "react";
-import { CartContext } from "../../CartContext";
-import { CartContextType } from "../../types";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store";
 import "./Header.css";
 
 function Header() {
-  const context = useContext(CartContext);
-
-  if (!context) return null;
-
-  const { cartCount, cartTotal } = context as CartContextType;
+  const cartCount = useSelector((state: RootState) => state.cart.count);
+  const cartTotal = useSelector((state: RootState) => state.cart.total);
 
   return (
     <header className="header">

@@ -1,18 +1,20 @@
-import { useState, useContext } from "react";
-import { CartContext } from "../../CartContext";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../store/cartSlice";
 import { MenuItemProps } from "../../types";
 import "./MenuItem.css";
 
 function MenuItem({ item }: MenuItemProps) {
   const [qty, setQty] = useState(1);
-
-  const context = useContext(CartContext);
-  if (!context) return null;
-
-  const { addToCart } = context;
+  const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    addToCart((item.price || 0) * qty, qty);
+    dispatch(
+      addToCart({
+        totalPrice: (item.price || 0) * qty,
+        quantity: qty,
+      })
+    );
   };
 
   const imageUrl = item.img || "/burger1.png";

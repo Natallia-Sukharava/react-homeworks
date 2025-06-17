@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { CartProvider } from "./CartContext";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import HomePage from "./pages/HomePage";
@@ -10,7 +9,7 @@ import "./App.css";
 
 function App() {
   return (
-    <CartProvider>
+    <>
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -21,7 +20,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} /> 
       </Routes>
       <Footer />
-    </CartProvider>
+    </>
   );
 }
 
