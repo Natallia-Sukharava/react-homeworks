@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import "./LoginPage.css";
+import { User } from "../types";
 
 function LoginPage() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
-  const handleLogin = (e) => {
+  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(""); 
 
@@ -20,7 +21,9 @@ function LoginPage() {
       return;
     }
 
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const raw = localStorage.getItem("users");
+    const users: User[] = raw ? JSON.parse(raw) : [];
+    
     const existingUser = users.find((user) => user.username === username);
 
     if (existingUser) {
