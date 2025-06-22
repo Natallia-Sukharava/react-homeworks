@@ -37,3 +37,22 @@ export type Meal = {
     title: string;
     items: string[];
   };  
+
+export interface OrderItem {
+  mealId: string;
+  count: number;
+  totalPrice: number;
+}
+
+export interface Order {
+  id: string;
+  createdAt: string;
+  status: string;
+  items: OrderItem[];
+  totalPrice: number;
+  deliveryAddress?: string;
+  address?: { street?: string };
+}
+
+
+  

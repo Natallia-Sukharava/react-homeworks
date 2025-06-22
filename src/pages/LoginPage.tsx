@@ -1,11 +1,15 @@
 import { useState, FormEvent } from "react";
 import "./LoginPage.css";
 import { User } from "../types";
+import { setUserName } from "../store/userSlice";
+import { useDispatch } from "react-redux";
 
 function LoginPage() {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
+
+  const dispatch = useDispatch();
 
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -29,6 +33,7 @@ function LoginPage() {
     if (existingUser) {
       if (existingUser.password === password) {
         localStorage.setItem("user", JSON.stringify({ username }));
+        dispatch(setUserName(username));
         alert("You have successfully logged in.");
       } else {
         setError("Incorrect password.");
@@ -38,6 +43,7 @@ function LoginPage() {
       const updatedUsers = [...users, newUser];
       localStorage.setItem("users", JSON.stringify(updatedUsers));
       localStorage.setItem("user", JSON.stringify({ username }));
+      dispatch(setUserName(username));
       alert("New user registered successfully.");
     }
   };
