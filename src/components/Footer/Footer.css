@@ -4,7 +4,8 @@
   background-position: center top;
   min-height: 433px;
   background-size: cover;
-  padding: 80px 120px 60px; 
+  padding: 80px 120px 60px;
+  margin-top: auto; 
 }
 
 .footer-container {
