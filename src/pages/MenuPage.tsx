@@ -4,6 +4,8 @@ import MenuItem from "../components/MenuItem/MenuItem";
 import Tooltip from "../components/Tooltip";
 import "./MenuPage.css";
 import { Meal } from "../types";
+import { useSelector } from "react-redux";
+import type { RootState } from "../store";
 
 function MenuPage() {
   const itemsPerClick = 6;
@@ -13,6 +15,8 @@ function MenuPage() {
   const { data: meals, status } = useFetch<Meal[]>(
     "https://65de35f3dccfcd562f5691bb.mockapi.io/api/v1/meals"
   );
+
+const cart = useSelector((state: RootState) => state.cart);
 
   const handleSeeMore = () => {
     setVisibleCount((prev) => prev + itemsPerClick);

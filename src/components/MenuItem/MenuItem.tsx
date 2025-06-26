@@ -9,12 +9,11 @@ function MenuItem({ item }: MenuItemProps) {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(
-      addToCart({
-        totalPrice: (item.price || 0) * qty,
-        quantity: qty,
-      })
-    );
+    dispatch(addToCart({
+      mealId: item.id,
+      unitPrice: item.price,
+      quantity: 1
+    }));    
   };
 
   const imageUrl = item.img || "/burger1.png";

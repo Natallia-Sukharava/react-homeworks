@@ -1,0 +1,149 @@
+.order-wrapper {
+  position: relative;
+  padding: 154px 10px 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+}
+
+.order-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw; height: 100%;
+  background-color: #f5fbfc;
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+  z-index: -1;
+}
+
+.order-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 55px;
+  letter-spacing: 1.65px;
+  color: #35b8be;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.order-card {
+  margin: 0 auto 16px; 
+  height: 200px;
+  display: grid;
+  grid-template-columns: 80px 430px auto 86px 10px 60px;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.order-item-img {
+  width: 80px; height: 80px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.order-item-name {
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.36px;
+  margin: 0;
+  color: #000;
+  text-align: left;
+}
+
+.order-item-info {
+  width: 344px;
+}
+
+.order-item-price {
+  font-size: 20px;
+   line-height: 20px;
+   color: #35b8be;
+   margin: 0;
+   text-align: end;
+}
+
+.order-item-count {
+  width: 60px;
+  height: 45px;
+  font-size: 27px;
+  text-align: center;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  background: #fafafa;
+  color: #2d2d3d;
+}
+
+.order-item-remove {
+  width: 60px;
+  height: 45px;
+  background: #35b8be; 
+  border: none;
+  padding: 0;display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 27px;
+  letter-spacing: 0.36px;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.order-field {
+   display: flex;
+   align-items: center;
+   gap: 50px;
+   max-width: 430px;
+}
+
+.order-field span {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.6px;
+  color: #08090a;
+}
+
+.order-field input {
+  height: 40px;
+  padding: 0 70px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #fafafa;
+  color: #2d2d3d;
+}
+
+.order-submit {
+  width: 147px;
+  height: 52px;
+  background-color: #35b8be;
+  border: none;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 8px;
+}
