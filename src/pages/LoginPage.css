@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f5fbfc;
+  background-color: var(--login-bg);
   justify-content: center;
   min-height: calc(100vh - 100px);
   box-sizing: border-box;
@@ -18,16 +18,16 @@
   font-size: 50px;
   line-height: 55px;
   letter-spacing: 1.65px;
-  color: #35b8be;
+  color: var(--login-title);
   margin-bottom: 40px;
 }
 
 .login-box {
   width: 695px;
   height: 283px;
-  background-color: #ffffff;
+  background-color: var(--login-box-bg);
   border-radius: 6px;
-  border: 1px solid rgba(53, 184, 190, 0.15);
+  border: 1px solid var(--login-box-border);
   padding: 40px;
   box-sizing: border-box;
 }
@@ -45,7 +45,7 @@
   font-family: "Inter", sans-serif;
   font-size: 18px;
   line-height: 20px;
-  color: #08090a;
+  color: var(--login-label);
   letter-spacing: 0.6px;
 }
 
@@ -53,17 +53,17 @@
   width: 430px;
   height: 45px;
   border-radius: 6px;
-  border: 1px solid #dddddd;
-  background-color: #fafafa;
+  border: 1px solid var(--login-input-border);
+  background-color: var(--login-input-bg);
   padding: 0 14px;
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  color: #000;
+  color: var(--login-input-text);
   text-align: left;
 }
 
 .login-form input::placeholder {
-  color: #000000;
+  color: var(--login-input-placeholder);
 }
 
 .login-buttons {
@@ -77,8 +77,8 @@
   width: 147px;
   height: 52px;
   border-radius: 6px;
-  background-color: #35b8be;
-  color: #fff;
+  background-color: var(--login-btn-bg);
+  color: var(--login-btn-text);
   font-family: "Inter", sans-serif;
   font-size: 16px;
   border: none;
@@ -89,16 +89,16 @@
   width: 132px;
   height: 52px;
   border-radius: 6px;
-  background-color: #ffffff;
-  color:#222222;
+  background-color: var(--login-cancel-bg);
+  color: var(--login-cancel-text);
   font-family: "Inter", sans-serif;
   font-size: 16px;
-  border: 1px solid #dddddd;
+  border: 1px solid var(--login-cancel-border);
   cursor: pointer;
 }
 
 .login-error {
-  color: red;
+  color: var(--login-error);
   margin-top: 15px;
   text-align: center;
   font-family: "Inter", sans-serif;

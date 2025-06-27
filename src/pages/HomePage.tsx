@@ -9,6 +9,9 @@ const Container = styled.section`
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+  html.dark & {
+    background-image: none;
+  }
 `;
 
 const Left = styled.div`
@@ -24,11 +27,11 @@ const Title = styled.h1`
   font-weight: 400;
   font-size: 60px;
   line-height: 60px;
-  color: #08090a;
+  color: var(--home-title);
   margin: 0 0 24px;
 
   span {
-    color: #35b8be;
+    color: var(--home-title-accent);
   }
 `;
 
@@ -37,7 +40,7 @@ const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24.12px;
   letter-spacing: 0.36px;
-  color: #546285;
+  color: var(--home-subtitle);
   max-width: 85%;
   margin-bottom: 40px;
 `;
@@ -50,8 +53,8 @@ const Button = styled.button`
   font-size: 17px;
   line-height: 20px;
   text-align: center;
-  color: #ffffff;
-  background: #35b8be;
+  color: var(--home-btn-text);
+  background: var(--home-btn-bg);
   border: none;
   border-radius: 6px;
   cursor: not-allowed;
@@ -80,7 +83,7 @@ const Score = styled.span`
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: #35b8be;
+  color: var(--home-score);
 `;
 
 const Reviews = styled.span`
@@ -88,7 +91,7 @@ const Reviews = styled.span`
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: #08090a;
+  color: var(--home-reviews);
 `;
 
 const Right = styled.div`
