@@ -13,8 +13,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+main, .main-section {
+  background: var(--main-bg);
+  transition: background 0.4s;
+}
+
+.subtitle, .section-description, .main-subtitle {
+  color: var(--subtitle);
+}
+
 body {
-  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.4s, color 0.3s;
 }
 
 a {
@@ -61,4 +72,178 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+html.light {
+  --bg-color: #ffffff;
+  --main-bg: #e7ecef;
+  --text-color: #222222;
+  --btn-bg: #ececec;
+  --btn-text: #222222;
+  --nav-link: #222222;
+  --nav-link-active: #21b4bd;
+  --subtitle: #686d8a;
+  --footer-bg: #ffffff;
+  --footer-text: #546285;
+  --footer-title: #08090A;
+  --footer-link-hover: #35b8be;
+  --footer-divider: #7E828F;
+  --footer-bottom-text: #353448;
+  --header-bg: #ffffff;
+  --nav-link: #28224B;
+  --nav-link-active: #35b8be;
+  --cart-bg: #35b8be;
+  --cart-badge-bg: #ffffff;
+  --cart-badge-text: #35b8be;
+  --cart-total: #35b8be;
+  --menu-bg: #ffffff;
+  --menu-bg-main: #ffffff;
+  --menu-border: rgba(53, 184, 190, 0.15);
+  --menu-title: #08090a;
+  --menu-price: #35b8be;
+  --menu-desc: #546285;
+  --menu-qty-border: #dddddd;
+  --menu-qty-bg: #fafafa;
+  --menu-qty-color: #000;
+  --menu-btn-bg: #35b8be;
+  --menu-btn-color: #ffffff;
+  --tooltip-bg: #1a1a1a;
+  --tooltip-text: #ffffff;
+  --tooltip-link: #337bee;
+  --login-bg: #f5fbfc;
+  --login-title: #35b8be;
+  --login-box-bg: #ffffff;
+  --login-box-border: rgba(53, 184, 190, 0.15);
+  --login-label: #08090a;
+  --login-input-bg: #fafafa;
+  --login-input-border: #dddddd;
+  --login-input-text: #000;
+  --login-input-placeholder: #000;
+  --login-btn-bg: #35b8be;
+  --login-btn-text: #ffffff;
+  --login-cancel-bg: #ffffff;
+  --login-cancel-text: #222;
+  --login-cancel-border: #dddddd;
+  --login-error: ff0000;
+  --menu-bg: #f5fbfc;
+  --menu-bg-main: #181818;
+  --menu-title: #35b8be;
+  --menu-subtitle: #546285;
+  --menu-btn-text: #222222;
+  --menu-btn-border: #61728333;
+  --menu-btn-active-bg: #35b8be;
+  --menu-btn-active-text: #ffffff;
+  --menu-contact: #35b8be;
+  --see-more-bg: #35b8be;
+  --see-more-text: #ffffff;
+  --order-bg: #f5fbfc;
+  --order-title: #35b8be;
+  --order-card-bg: #ffffff;
+  --order-card-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --order-item-name: #000000;
+  --order-item-price: #35b8be;
+  --order-item-count-bg: #fafafa;
+  --order-item-count-border: #dddddd;
+  --order-item-count-color: #2d2d3d;
+  --order-item-remove-bg: #35b8be;
+  --order-item-remove-color: #ffffff;
+  --order-field-label: #08090a;
+  --order-field-bg: #fafafa;
+  --order-field-border: #e2e8f0;
+  --order-field-color: #2d2d3d;
+  --order-submit-bg: #35b8be;
+  --order-submit-text: #ffffff;
+  --home-title: #08090a;
+  --home-title-accent: #35b8be;
+  --home-subtitle: #546285;
+  --home-btn-bg: #35b8be;
+  --home-btn-text: #ffffff;
+  --home-score: #35b8be;
+  --home-reviews: #08090a;
+}
+
+html.dark {
+  --bg-color: #181818;
+  --main-bg: #20262d;
+  --text-color: #f2f2f2;
+  --btn-bg: #333;
+  --btn-text: #f2f2f2;
+  --nav-link: #d8e8e9;
+  --nav-link-active: #26dadb;
+  --subtitle: #b3c5dd;
+  --footer-bg: #16171a;
+  --footer-text: #b5bfd7;
+  --footer-title: #f4f4f4;
+  --footer-link-hover: #35b8be;
+  --footer-divider: #44506a;
+  --footer-bottom-text: #bbc5e0;
+  --header-bg: #191b1d;
+  --nav-link: #e3e4e6;
+  --nav-link-active: #35b8be;
+  --cart-bg: #35b8be;
+  --cart-badge-bg: #28224B;
+  --cart-badge-text: #35b8be;
+  --cart-total: #35b8be;
+  --menu-bg: #212325;
+  --menu-border: rgba(53, 184, 190, 0.19);
+  --menu-title: #e2e5e8;
+  --menu-price: #35b8be;
+  --menu-desc: #b7c7e2;
+  --menu-qty-border: #44464a;
+  --menu-qty-bg: #252729;
+  --menu-qty-color: #eaeaea;
+  --menu-btn-bg: #35b8be;
+  --menu-btn-color: #ffffff;
+  --tooltip-bg: #f4f4f4;
+  --tooltip-text: #1a1a1a;
+  --tooltip-link: #00cfff;
+  --login-bg: #151a1c;
+  --login-title: #35b8be;
+  --login-box-bg: #23282c;
+  --login-box-border: rgba(53, 184, 190, 0.25);
+  --login-label: #c2c7d1;
+  --login-input-bg: #23282c;
+  --login-input-border: #364047;
+  --login-input-text: #fafafa;
+  --login-input-placeholder: #a5b0bc;
+  --login-btn-bg: #35b8be;
+  --login-btn-text: #ffffff;
+  --login-cancel-bg: #2a2e33;
+  --login-cancel-text: #e3e3e3;
+  --login-cancel-border: #364047;
+  --login-error: #ff5f60;
+  --menu-bg: #182024;
+  --menu-title: #35b8be;
+  --menu-subtitle: #b0bfd2;
+  --menu-btn-text: #e2e5e8;
+  --menu-btn-border: #253142;
+  --menu-btn-active-bg: #35b8be;
+  --menu-btn-active-text: #ffffff;
+  --menu-contact: #35b8be;
+  --see-more-bg: #35b8be;
+  --see-more-text: #ffffff;
+  --order-bg: #162128;
+  --order-title: #35b8be;
+  --order-card-bg: #232a31;
+  --order-card-shadow: 0 2px 8px rgba(40, 70, 90, 0.13);
+  --order-item-name: #e2e5e8;
+  --order-item-price: #35b8be;
+  --order-item-count-bg: #20262b;
+  --order-item-count-border: #344150;
+  --order-item-count-color: #a4b4c7;
+  --order-item-remove-bg: #35b8be;
+  --order-item-remove-color: #ffffff;
+  --order-field-label: #e3e6ed;
+  --order-field-bg: #23282c;
+  --order-field-border: #344150;
+  --order-field-color: #e3e3e3;
+  --order-submit-bg: #35b8be;
+  --order-submit-text: #ffffff;
+  --home-title: #e2e5e8;
+  --home-title-accent: #35b8be;
+  --home-subtitle: #b0bfd2;
+  --home-btn-bg: #35b8be;
+  --home-btn-text: #ffffff;
+  --home-score: #35b8be;
+  --home-reviews: #e2e5e8;
 }
