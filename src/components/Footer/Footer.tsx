@@ -23,7 +23,7 @@ function Footer() {
         <div className="footer-content">
 
           <div className="footer-logo-section">
-            <img src="/logo.svg" alt="logo" className="footer-logo" />
+            <img src="/src/assets/logo.svg" alt="logo" className="footer-logo" />
             <p className="footer-description">
               Takeaway &amp; Delivery template
               <br />
@@ -68,9 +68,9 @@ function Footer() {
           </div>
 
           <div className="footer-icons">
-            <img src="/icons/instagram.svg" alt="instagram" width="40" height="40" />
-            <img src="/icons/twitter.svg"    alt="twitter"   width="40" height="40" />
-            <img src="/icons/youtube.svg"    alt="youtube"   width="40" height="40" />
+            <img src="/src/assets/icons/instagram.svg" alt="instagram" width="40" height="40" />
+            <img src="/src/assets/icons/twitter.svg"    alt="twitter"   width="40" height="40" />
+            <img src="/src/assets/icons/youtube.svg"    alt="youtube"   width="40" height="40" />
           </div>
         </div>
       </div>

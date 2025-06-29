@@ -5,7 +5,7 @@ const Container = styled.section`
   align-items: center;
   justify-content: space-between;
   padding: 100px 100px;
-  background-image: url("/BGShape.svg");
+  background-image: url("/src/assets/BGShape.svg");
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -121,7 +121,7 @@ function HomePage() {
         <Button disabled>Place an Order</Button>
 
         <RatingWrapper>
-          <StarLogo src="/star.svg" alt="Trustpilot logo" />
+          <StarLogo src="/src/assets/star.svg" alt="Trustpilot logo" />
           <RatingRow>
             <Score>4.8 out of 5</Score>
             <Reviews>based on 2000+ reviews</Reviews>
@@ -130,7 +130,7 @@ function HomePage() {
       </Left>
 
       <Right>
-        <img src="/hero-image.svg" alt="Food delivery" />
+        <img src="/src/assets/hero-image.svg" alt="Food delivery" />
       </Right>
     </Container>
   );

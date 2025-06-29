@@ -1,5 +1,5 @@
 .footer {
-  background-image: url("/footer.svg");
+  background-image: url("/src/assets/footer.svg");
   background-repeat: no-repeat;
   background-position: center top;
   min-height: 433px;

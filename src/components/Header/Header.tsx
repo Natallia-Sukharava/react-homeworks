@@ -27,7 +27,7 @@ function Header() {
     <header className="header">
       <div className="header-container">
         <div className="logo-wrapper">
-          <img src="/logo.svg" alt="logo" className="header-logo" />
+          <img src="/src/assets/logo.svg" alt="logo" className="header-logo" />
         </div>
         <div className="header-right">
         <nav className="header-nav">
@@ -62,7 +62,7 @@ function Header() {
 
           <div className="cart-wrapper" onClick={handleCartClick}>
             <div className="cart">
-              <img src="/cart.svg" alt="basket" className="cart-icon" />
+              <img src="/src/assets/cart.svg" alt="basket" className="cart-icon" />
               <span className="cart-badge">{cartCount}</span>
             </div>
             <div className="cart-total">

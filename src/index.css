@@ -76,13 +76,7 @@ button:focus-visible {
 
 html.light {
   --bg-color: #ffffff;
-  --main-bg: #e7ecef;
-  --text-color: #222222;
-  --btn-bg: #ececec;
-  --btn-text: #222222;
-  --nav-link: #222222;
-  --nav-link-active: #21b4bd;
-  --subtitle: #686d8a;
+  --main-bg: #ffffff;
   --footer-bg: #ffffff;
   --footer-text: #546285;
   --footer-title: #08090A;
@@ -96,10 +90,10 @@ html.light {
   --cart-badge-bg: #ffffff;
   --cart-badge-text: #35b8be;
   --cart-total: #35b8be;
-  --menu-bg: #ffffff;
+  --menu-bg_: #ffffff;
   --menu-bg-main: #ffffff;
-  --menu-border: rgba(53, 184, 190, 0.15);
-  --menu-title: #08090a;
+  --menu-border:#ffffff; 
+  --menu-title_: #08090a;
   --menu-price: #35b8be;
   --menu-desc: #546285;
   --menu-qty-border: #dddddd;
@@ -165,12 +159,6 @@ html.light {
 html.dark {
   --bg-color: #181818;
   --main-bg: #20262d;
-  --text-color: #f2f2f2;
-  --btn-bg: #333;
-  --btn-text: #f2f2f2;
-  --nav-link: #d8e8e9;
-  --nav-link-active: #26dadb;
-  --subtitle: #b3c5dd;
   --footer-bg: #16171a;
   --footer-text: #b5bfd7;
   --footer-title: #f4f4f4;
@@ -184,9 +172,9 @@ html.dark {
   --cart-badge-bg: #28224B;
   --cart-badge-text: #35b8be;
   --cart-total: #35b8be;
-  --menu-bg: #212325;
+  --menu-bg_: #212325;
   --menu-border: rgba(53, 184, 190, 0.19);
-  --menu-title: #e2e5e8;
+  --menu-title_: #e2e5e8;
   --menu-price: #35b8be;
   --menu-desc: #b7c7e2;
   --menu-qty-border: #44464a;

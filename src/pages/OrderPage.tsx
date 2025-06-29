@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import type { RootState, AppDispatch } from "../store";
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "../store/hooks";
+import type { RootState } from "../store";
+
 import { fetchMenu } from "../store/menuSlice";
 import {
   CartItem,
@@ -10,7 +12,7 @@ import {
 import "./OrderPage.css";
 
 const OrderPage: React.FC = () => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const cartItems = useSelector((s: RootState) => s.cart.items);
   const meals = useSelector((s: RootState) => s.menu.meals);
 
