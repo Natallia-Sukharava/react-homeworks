@@ -42,18 +42,24 @@ const cartSlice = createSlice({
       state.count = state.items.reduce((sum, i) => sum + i.count, 0);
       state.total = state.items.reduce((sum, i) => sum + i.count * i.unitPrice, 0);
     },
-    updateCartItemCount: (
+
+    updateCartItemCount(
       state,
       action: PayloadAction<{ mealId: string; count: number }>
-    ) => {
+    ) {
       const { mealId, count } = action.payload;
       const item = state.items.find((i) => i.mealId === mealId);
-      if (item && count > 0) {
-        item.count = count;
+      if (item) {
+        if (count === 0) {
+          state.items = state.items.filter((i) => i.mealId !== mealId);
+        } else {
+          item.count = count;
+        }
       }
       state.count = state.items.reduce((sum, i) => sum + i.count, 0);
       state.total = state.items.reduce((sum, i) => sum + i.count * i.unitPrice, 0);
     },
+  
     clearCart: (state) => {
       state.items = [];
       state.count = 0;

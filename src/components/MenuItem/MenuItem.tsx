@@ -16,7 +16,7 @@ function MenuItem({ item }: MenuItemProps) {
     }));    
   };
 
-  const imageUrl = item.img || "/burger1.png";
+  const imageUrl = item.img || "/src/assets/burger1.png";
   const title = item.meal || "No Title";
   const description =
     item.instructions.length > 100
